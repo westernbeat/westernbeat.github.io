@@ -1,0 +1,12 @@
+* {
+  /*background-color: #363636;*/
+}
+
+.heading1 {
+  color: #363636;
+  transition: 1s;
+}
+
+.heading1:hover {
+  color: red;
+}
