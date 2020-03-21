@@ -1,75 +1,3 @@
-
-<?php
-
-$public_key = "6LfSNtQUAAAAAF4EnRC3Q4PfXrO_wWiNz4gOcSfZ";
-$private_key = "6LfSNtQUAAAAAIC1ZY7hMc0njq6lCB_OtmeAWRbX";
-$url = "https://www.google.com/recaptcha/api/siteverify";
-
-if(array_key_exists('submit_form',$_POST)){
-  //echo "<pre>";print_r($_POST);echo "</pre>";
-
-  $response_key = $_POST['g-recaptcha-response'];
-  $response = file_get_contents($url.'?secret='.$private_key.'&response='.$response_key.'&remoteip='.$_SERVER['REMOTE_ADDR']);
-  $response = json_decode($response);
-  
-  //echo "<pre>";print_r($response);echo "</pre>";
-  
-  if($response->success === true){
-      
-        if(isset($_POST['submit_form'])){
-            $firstName = $_POST['Name'];
-            $surname = $_POST['Surname'];
-            $fullName = $firstName . " " . $surname;
-            $nickname = $_POST['Preferred'];
-            
-            if($nickname == ""){
-                $nickname = $firstName;
-            }
-            
-            $senderEmail = $_POST['Email'];
-            $senderPhone = $_POST['Number'];
-            $txt = $_POST['Description'];
-
-            $mailTo = "info@wallanplaster.com.au";
-            $smsTo = "+61402825140@sms.utbox.net";
-            $headers = "From: ".$senderEmail;
-            $subject = "You have recieved a new enquiry from ".$fullName.".\n\n".$message;
-            
-            $smsNumber = $senderPhone;
-            $smsNumber = substr_replace($smsNumber, "+61", 0,1);
-            $smsMail = $smsNumber . "@sms.utbox.net";
-            $confirmationTxt = "Dear " . $nickname . ", " . "\n\n" . 
-            "Thank you for your enquiry today." . "\n" .
-            "We will be in touch with you as soon as possible on " . $senderPhone . " to discuss your plastering needs." . " \n\n" . 
-            "Kind regards," . "\n" . 
-            "Wallan Plaster."; 
-            
-            $confirmationHeader =  "From: enquiries@wallanplaster.com.au";
-            $confirmationSubject = "Thanks for your enquiry, " . $nickname . "!";
-            $message = $subject . 
-          $txt . "\n\n" .
-            'Preferred Name : ' . $nickname     . "\n" .
-            '  Phone Number : ' . $senderPhone  . "\n" .
-            ' Email Address : ' . $senderEmail;
-            
-            
-            
-            mail($mailTo, $subject, $message, $headers);
-            mail($senderEmail, $confirmationSubject, $confirmationTxt, $confirmationHeader);
-            mail($smsMail, $confirmationSubject, $confirmationTxt, $confirmationHeader);
-            mail($smsTo, $subject, $message, $confirmationHeader);
-            echo "<script type='text/javascript'>alert('Thank you for your enquiry. you will recieve a call shortly');</script>";
-            //header("Location: index.php?mailsend");
-            //header("Location: mailsend.html?mailsend");   
-        }
-        
-  }
-  else{
-    echo "<script type='text/javascript'>alert('An un-known error occured, Please try again');</script>";			
-  }
-}
-?>
-
 <!DOCTYPE html>
 <html id = "html">
     <head>
@@ -237,9 +165,6 @@ if(array_key_exists('submit_form',$_POST)){
                     </div>
                     <div>
                       <textarea  class="description" id="description" name="Description" placeholder="Please leave a brief description about your enquiry (required max 255 charachters)" style="height:100px" required minlength="10" maxlength="200"></textarea>
-                    </div>
-                    <div class="g-recaptcha-wrapper">
-                      <div class="g-recaptcha" data-sitekey='<?php print $public_key; ?>'></div>
                     </div>
                     <div style="height: 46px;">
                       <input id="submit" type="submit" name="submit_form" value="Submit">
