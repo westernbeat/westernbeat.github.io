@@ -1,4 +1,4 @@
-<!--
+
 <?php
 
 $public_key = "6LfSNtQUAAAAAF4EnRC3Q4PfXrO_wWiNz4gOcSfZ";
@@ -69,7 +69,6 @@ if(array_key_exists('submit_form',$_POST)){
   }
 }
 ?>
--->
 
 <!DOCTYPE html>
 <html id = "html">
