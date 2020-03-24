@@ -1,0 +1,111 @@
+@import url('style.css');
+
+.personal-content-wrapper {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-gap: 10px;
+}
+
+.personal-content-top {
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    height: 300;
+}
+
+.personal-info-wrapper, .profile-img-wrapper {
+    padding: 5px;
+    display: flex;
+}
+
+.personal-info-wrapper {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+li {
+    list-style-type: none;
+}
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+    margin: 0 3px;
+}
+
+.personal-content-wrapper > table {
+    min-width: 100vw;
+    max-height: 100%;
+}
+
+.personal-content-wrapper > tr {
+    height: 10px;
+}
+
+
+.profile-img-wrapper {
+   object-fit: cover;
+}
+
+.profile-img-wrapper > img {
+    object-fit: cover;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.personal-content-bottom {
+    width: 100%;
+}
+
+.personal-content-bottom > .about-me {
+    display: block;
+    width: 100%;;
+    justify-content: space-between;
+    padding: 0, 5%;
+}
+
+.personal-content-bottom > .about-me > div {
+    padding: 0 5%;
+    margin: 5px;
+    width: 100%;
+}
+
+.personal-content-bottom > .about-me > div > img{
+    width: 100%;
+    padding: 0, 5%;
+}
+
+.personal-content-bottom > .about-me > div > a {
+    color: var(--secondary-brand-color);
+    text-decoration: none;
+}
+
+
+.personal-content-bottom > .about-me > div > p {
+    width: 100%;
+    margin-top: 25px;
+    text-align: justify;
+    font-family: sans-serif;
+}
+
+@media screen and (max-width: 750px) {
+    .personal-content-bottom > .about-me {
+        display: grid;
+        grid-template-columns: 100%;
+        padding: 0, 5%;
+    }
+
+    .personal-content-bottom > .about-me > div {
+        width: 100vw;
+        padding: 0, 5%;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    .personal-content-top {
+        display: block;
+    }
+}
