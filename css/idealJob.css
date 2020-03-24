@@ -1,9 +1,43 @@
+@import url('styles.css');
 
-.paragraph {
-    text-align: center;
+.img {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    max-width: 100%;
 }
 
-h3 {
-    margin-top: 25px;
+img {
+    width: 60%;
+}
+
+h1, h4, h5 {
+    text-align: center;
+    transition: 1s;
+}
+
+a {
+    color: var(--primary-brand-color);
+    text-decoration: none;
+}
+
+h5:hover {
+    transform: scale(1.5);
+}
+
+h1 {
     text-decoration: underline;
 }
+
+.ideal-job-content {
+    display: block;
+    grid-template-columns: 100%;
+    grid-gap: 5%;
+}
+
+
+.right-column > div > img {
+    display: block;
+    width: 100%;
+}
+

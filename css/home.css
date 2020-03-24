@@ -29,10 +29,23 @@ li {
     list-style-type: none;
 }
 
-h2 {
+h1, h2 {
     text-align: center;
     text-decoration: underline;
     margin: 0 3px;
+}
+
+h5 a {
+    transition: 1s;
+}
+
+a {
+    color: var(--primary-brand-color);
+    text-decoration: none;
+}
+
+a:hover{
+    color: var(--secondary-brand-color);
 }
 
 .personal-content-wrapper > table {
@@ -82,13 +95,6 @@ h2 {
     text-decoration: none;
 }
 
-
-.personal-content-bottom > .about-me > div > p {
-    width: 100%;
-    margin-top: 25px;
-    text-align: justify;
-    font-family: sans-serif;
-}
 
 @media screen and (max-width: 750px) {
     .personal-content-bottom > .about-me {
