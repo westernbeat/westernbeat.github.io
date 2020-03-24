@@ -31,8 +31,6 @@ h1 {
 
 .ideal-job-content {
     display: block;
-    grid-template-columns: 100%;
-    grid-gap: 5%;
 }
 
 .right-column > div > img {

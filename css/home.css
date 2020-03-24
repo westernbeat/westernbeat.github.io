@@ -74,14 +74,13 @@ a:hover{
 
 .personal-content-bottom > .about-me {
     display: block;
-    width: 100%;;
+    width: 100%;
     justify-content: space-between;
     padding: 0, 5%;
 }
 
 .personal-content-bottom > .about-me > div {
-    padding: 0 5%;
-    margin: 5px;
+  
     width: 100%;
 }
 
@@ -105,7 +104,6 @@ a:hover{
 
     .personal-content-bottom > .about-me > div {
         width: 100%;
-        padding: 0, 5%;
     }
     
 }

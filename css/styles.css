@@ -65,10 +65,12 @@ h3 {
     text-decoration: underline;
 }
 
-
-
 main {
     overflow-x: hidden;
+}
+
+div {
+    text-align: justify;
 }
 
 p {
@@ -632,12 +634,6 @@ img{
     }
 
     /*  --  Side Nav  --  */ 
-}
-
-@media screen and (width: 750px) {
-    .main-content {
-        width: 100vw;
-    }
 }
 
 @media screen and (max-width: 600px) {
