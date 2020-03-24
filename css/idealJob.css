@@ -35,6 +35,9 @@ h1 {
     grid-gap: 5%;
 }
 
+div {
+    margin-top: 5%;
+}
 
 .right-column > div > img {
     display: block;
